@@ -1,0 +1,62 @@
+# EGO1 (XC7A35T), all user I/O uses LVCMOS33.
+
+# 100 MHz onboard clock: 10 ns period.
+set_property PACKAGE_PIN P17 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+create_clock -name sys_clk -period 10.000 [get_ports clk]
+
+# S1 / PB1 is active high when pressed.
+set_property PACKAGE_PIN R17 [get_ports clr]
+set_property IOSTANDARD LVCMOS33 [get_ports clr]
+
+# SW0 = write enable; SW1..SW3 = write select; SW4..SW6 = read select.
+set_property PACKAGE_PIN P5 [get_ports en]
+set_property IOSTANDARD LVCMOS33 [get_ports en]
+set_property PACKAGE_PIN P4 [get_ports {wsel[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {wsel[0]}]
+set_property PACKAGE_PIN P3 [get_ports {wsel[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {wsel[1]}]
+set_property PACKAGE_PIN P2 [get_ports {wsel[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {wsel[2]}]
+set_property PACKAGE_PIN R2 [get_ports {rsel[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {rsel[0]}]
+set_property PACKAGE_PIN M4 [get_ports {rsel[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {rsel[1]}]
+set_property PACKAGE_PIN N4 [get_ports {rsel[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {rsel[2]}]
+
+# DIP_SW0..DIP_SW7 provide d[0]..d[7].
+set_property PACKAGE_PIN U3 [get_ports {d[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[0]}]
+set_property PACKAGE_PIN U2 [get_ports {d[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[1]}]
+set_property PACKAGE_PIN V2 [get_ports {d[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[2]}]
+set_property PACKAGE_PIN V5 [get_ports {d[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[3]}]
+set_property PACKAGE_PIN V4 [get_ports {d[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[4]}]
+set_property PACKAGE_PIN R3 [get_ports {d[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[5]}]
+set_property PACKAGE_PIN T3 [get_ports {d[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[6]}]
+set_property PACKAGE_PIN T5 [get_ports {d[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {d[7]}]
+
+# D0..D7 display q[0]..q[7]; EGO1 LEDs are active high.
+set_property PACKAGE_PIN F6 [get_ports {q[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[0]}]
+set_property PACKAGE_PIN G4 [get_ports {q[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[1]}]
+set_property PACKAGE_PIN G3 [get_ports {q[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[2]}]
+set_property PACKAGE_PIN J4 [get_ports {q[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[3]}]
+set_property PACKAGE_PIN H4 [get_ports {q[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[4]}]
+set_property PACKAGE_PIN J3 [get_ports {q[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[5]}]
+set_property PACKAGE_PIN J2 [get_ports {q[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[6]}]
+set_property PACKAGE_PIN K2 [get_ports {q[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {q[7]}]
