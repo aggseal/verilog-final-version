@@ -39,7 +39,8 @@ end
 
 //左移dir_ctrl=1
 always @(posedge clk or posedge rst)begin
-    if (rst)    led_position <= 8'b1;
+    if (rst)    
+        led_position <= 8'b1;
     else if (tick)begin
         if (dir_ctrl)   led_position <= {led_position[6:0], led_position[7]};
         else    led_position <= {led_position[0],led_position[7:1]};
@@ -48,10 +49,14 @@ end
 
 //分单灯和双灯, mode_sel=1为单灯
 always @(*)begin
-    if (rst)    led = 8'b1;
-    else if (mode_sel)   led = led_position;
-    else if (dir_ctrl)  led = led_position | {led_position[6:0], led_position[7]};
-    else led = led_position | {led_position[0], led_position[7:1]};
+    if (rst)    
+        led = 8'b1;
+    else if (mode_sel)   
+        led = led_position;
+    else if (dir_ctrl)  
+        led = led_position | {led_position[6:0], led_position[7]};
+    else 
+        led = led_position | {led_position[0], led_position[7:1]};
 end
 
 endmodule
