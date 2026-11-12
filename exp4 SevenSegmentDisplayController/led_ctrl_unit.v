@@ -50,7 +50,7 @@ always @(*) begin
     endcase
 end
 
-// EGO1高电平点亮，段码位序为{CA,CB,CC,CD,CE,CF,CG,DP}。
+// EGO1高电平点亮，段码位序为{CA,CB,CC,CD,CE,CF,CG,DP}
 always @(*) begin
     case (digit)
         4'h0: seg_code = 8'hFC;
@@ -73,7 +73,7 @@ always @(*) begin
     endcase
 end
 
-// led_en[0]对应右端DK0，led_en[7]对应左端DK7。
+// led_en[0]对应右端DK0，led_en[7]对应左端DK7
 always @(*) begin
     case (index)
         3'd0: led_en = 8'b0000_0001;
